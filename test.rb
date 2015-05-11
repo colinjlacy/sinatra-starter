@@ -1,5 +1,6 @@
 # myapp.rb
 require 'sinatra'
+require 'json'
 
 get '/?' do
 	File.read(File.join('views', 'template.html'))
@@ -31,6 +32,15 @@ get '/vars/?' do
 		class: "TTS",
 		language: "Ruby"
 	}
+	erb :instance
+end
+
+get '/form/?' do
+	erb :form
+end
+
+post '/form/?' do
+	@variable = params
 	erb :instance
 end
 
