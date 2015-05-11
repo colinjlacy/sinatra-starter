@@ -1,6 +1,5 @@
 # myapp.rb
 require 'sinatra'
-require 'json'
 
 get '/?' do
 	File.read(File.join('views', 'template.html'))
